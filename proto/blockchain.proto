@@ -3,28 +3,28 @@ package proto;
 
 // Defining the service
 service Blockchain {
-    // A simpe RPC to create new BC
-    rpc AddBlock (AddBlockReq) returns (AddBlockRes);
-    // A simpe RPC to get a BC
-    rpc GetBlockchain (GetBlockchainReq) returns (GetBlockchainRes);
+	// A simpe RPC to create new BC
+	rpc AddBlock (AddBlockReq) returns (AddBlockRes);
+	// A simpe RPC to get a BC
+	rpc GetBlockchain (GetBlockchainReq) returns (GetBlockchainRes);
 }
 
 message AddBlockReq {
-    string data = 1;
+	string data = 1;
 }
 
 message AddBlockRes {
-    string hash = 1;
+	string hash = 1;
 }
 
 message GetBlockchainReq {}
 
 message Block {
-    string hash = 1;
-    string preBlockchain = 2;
-    string data = 3;
+	string hash = 1;
+	string prevBlockHash = 2;
+	string data = 3;
 }
 
 message GetBlockchainRes {
-    repeated Block blocks = 1;
+	repeated Block blocks = 1;
 }
